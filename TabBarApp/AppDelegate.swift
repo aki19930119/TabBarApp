@@ -13,7 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        /*タブバーのタイトルの情報をセット
+        ここで渡している情報
+         ofSize 文字のサイズ  weight  文字の太さ　foregroundColor　文字の色(赤)　for　タッチされたときの色
+        */
+        UITabBarItem.appearance().setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 9, weight: .bold), .foregroundColor: UIColor.init(red: 230/255, green: 50/255, blue: 50/255, alpha: 1)], for: .normal)
         return true
     }
 

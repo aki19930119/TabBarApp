@@ -1,4 +1,13 @@
 //
+//  File.swift
+//  TabBarApp
+//
+//  Created by 柿沼儀揚 on 2020/11/18.
+//
+
+import Foundation
+
+//
 //  ViewController.swift
 //  TabBarApp
 //
@@ -18,21 +27,20 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
             
-        self.setTabBarItem(index: 0, titile: "ホーム", selectedImageName: "movieBlack", unselectedimageName: "movieRed")
-        self.setTabBarItem(index: 1, titile: "探索", selectedImageName: "safariBlack", unselectedimageName: "safariRed")
+        self.setTabBarItem(index: 0, titile: "ホーム", image: "movieBlack")
+        self.setTabBarItem(index: 1, titile: "探索", image: "safariBlack")
 
         }
         /*
         index タブの数だけ存在　titile　必要に応じてつける　必要ない場合は""
         selectedImageName　選択された時に表示する画像　unselectedimageName　選択されてないときに表示される画像
         */
-        func setTabBarItem(index: Int, titile: String, selectedImageName: String, unselectedimageName: String) {
+        func setTabBarItem(index: Int, titile: String, image: String) {
             let tabBarItem = self.tabBarController?.tabBar.items![index]
             tabBarItem!.title = titile
             
-            tabBarItem!.image = UIImage(named: selectedImageName)?.resize(size: .init(width: 25, height: 25))?.withRenderingMode(.alwaysOriginal)
+            tabBarItem!.image = UIImage(named: image)?.resize(size: .init(width: 25, height: 25))?.withRenderingMode(.alwaysOriginal)
             
-            tabBarItem!.selectedImage = UIImage(named: unselectedimageName)?.resize(size: .init(width: 25, height: 25))?.withRenderingMode(.alwaysOriginal)
         }
 
 }
